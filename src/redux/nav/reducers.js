@@ -4,12 +4,17 @@ import { AppNavigator } from '@navigators/AppNavigator';
 
 // Start with two routes: The Main screen, with the Login screen on top.
 const firstAction = AppNavigator.router.getActionForPathAndParams('Main');
+// get state for doing some action from
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
+
 const secondAction = AppNavigator.router.getActionForPathAndParams('Login');
 
 const initialNavState = AppNavigator.router.getStateForAction(
-  firstAction
+  secondAction,
+  tempNavState
 );
+
+console.log(initialNavState);
 
 export default function navReducers(state = initialNavState, action) {
   let nextState;
@@ -37,6 +42,7 @@ export default function navReducers(state = initialNavState, action) {
       );
       break;
     case 'SpecialCase':
+      console.log(state,'asi')
       return {
         index:0,
         routes:[

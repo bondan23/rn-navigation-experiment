@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, BackHandler } from 'react-native';
 import { connect } from 'react-redux';
-import { NavigationActions,addNavigationHelpers, StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { NavigationActions, addNavigationHelpers, StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 
 import LoginScreen from '@components/LoginScreen';
 import MainScreen from '@components/MainScreen';
@@ -57,7 +57,7 @@ export const AppNavigator = StackNavigator({
   Profile: {
     screen: ProfileScreen,
     navigationOptions:{
-    headerTitle:<TitleLogo />,
+      headerTitle:<TitleLogo />,
     }
   },
   Test: { screen: TestScreen },
